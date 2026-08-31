@@ -1,6 +1,7 @@
 package day01;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,6 +29,12 @@ public class Practice02_Locators {
 		driver.findElement(By.linkText("OrangeHRM, Inc")).isDisplayed();
 		
 		driver.findElement(By.partialLinkText("OrangeHRM")).isEnabled();
+		
+		List<WebElement> links=driver.findElements(By.className("oxd-icon"));
+		System.out.println("No of links: "+links.size());
+		
+		List<WebElement> tags=driver.findElements(By.tagName("a"));
+		System.out.println("No of tags: "+tags.size());
 
 		driver.quit();
 	}
